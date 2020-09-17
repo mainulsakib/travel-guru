@@ -1,25 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { createContext, useState } from 'react';
+import { BrowserRouter as Router,  Switch, Route} from "react-router-dom";
 import './App.css';
+import DestinationDetail from './Component/DestinationDetail/DestinationDetail';
+import Home from './Component/Home/Home';
+import Login from './Component/Login/Login';
+import NavigationBar from './Component/Navbar/NavigationBar';
+import News from './Component/News/News';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
+import RoomInfo from './Component/RoomInfo/RoomInfo';
+
+export const UserContext=createContext()
+
 
 function App() {
+  const [loggedInUser,setLoggedInUser]=useState({})
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div style={{maxHeight:'100%'}} className="App">
+      <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
+
+     <Router>
+       <NavigationBar></NavigationBar>
+       <Switch>
+         <Route path="/home">
+       <Home></Home>
+         </Route>
+           <Route path="/news">
+             <News></News>
+            </Route>
+            <Route path="/destination/:destinationId">
+              <DestinationDetail></DestinationDetail>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <PrivateRoute path="/roominfo">
+              <RoomInfo></RoomInfo>
+            </PrivateRoute>
+            <Route exact path="/">
+            <Home></Home>
+            </Route>
+       </Switch>
+     </Router>
+     </UserContext.Provider>
+     </div>
   );
 }
 
