@@ -12,19 +12,24 @@ const RoomInfo = () => {
     return (
         <div style={{color: 'white'}}>
            <h1> Stay in Cox's Bazar</h1> 
-           <div>
+           <div style={{width:"40%",height:"80%", float: 'left'}}>
             { 
-                    hotel.map(res=><div>
-                        <h1>{res.name}</h1>
+                    hotel.map(res=><div style={{border: '1px solid'}}>
+                     
+                          <img style={{width:"100px",height:'220px',float :"left"}} src={res.image} alt=""/>
+                     
+                      <div style={{width:"100px",height:"100px"}}>
+                      <p>{res.name}</p>
                     <p>{res.guest}</p>
                     <p>{res.facility}</p>
                     <p>{res.cancel}</p>
                     <p>{res.rating}</p>
                     <p>{res.price}</p>
+                      </div>
                     </div>  )
             }
            </div>
-           <div>
+           <div style={{width: '50%',float: 'right'}}>
          <Map></Map>
            </div>
         </div>

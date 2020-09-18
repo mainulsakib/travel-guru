@@ -26,7 +26,7 @@ const NavigationBar = () => {
       <Link style={linkStyle} to="contact">Contact</Link>
     </Nav>
    {loggedInUser.isSignedIn? loggedInUser.name:<Button style={{backgroundColor: "#F9A51A",
-borderRadius: "5px"}}><Link to="login"> Log in</Link></Button>}
+borderRadius: "5px"}}><Link style={{textDecoration: "none",color: "white"}} to="login"> Log in</Link></Button>}
   </Navbar>
   </div>
   );

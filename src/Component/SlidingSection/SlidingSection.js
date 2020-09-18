@@ -13,11 +13,8 @@ const SlidingSection = (props) => {
         <Card.Img variant="top" src={image} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
-          <Card.Text>
-            {description}
-          </Card.Text>
           <Button style={{backgroundColor: "#F9A51A",
-borderRadius: "5px", color: "white"}}><Link to={`/destination/${id}`}> Booking </Link></Button>
+borderRadius: "5px", color: "white"}}><Link style={{textDecoration: "none",color: "white"}} to={`/destination/${id}`}> Booking </Link></Button>
         </Card.Body>
       </Card>
   </div>

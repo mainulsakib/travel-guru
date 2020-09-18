@@ -5,7 +5,8 @@ const hotel=[
         facility:'wifi ,air conditioning kitchen',
         cancel:'cancellation facility available',
         rating:4.9,
-        price:34
+        price:34,
+        image:'https://i.ibb.co/3psnP1q/Rectangle-26.png'
     },
     {
         name: 'Apartment in last panoroma'
@@ -13,7 +14,8 @@ const hotel=[
         facility:'wifi ,air conditioning kitchen',
         cancel:'cancellation facility available',
         rating:4.8,
-        price:52
+        price:52,
+        image:'https://i.ibb.co/3hftr34/Rectangle-27.png'
     },
     {
         name: 'Ar lounge and pool'
@@ -21,7 +23,8 @@ const hotel=[
         facility:'wifi ,air conditioning kitchen',
         cancel:'cancellation facility available',
         rating:4.9,
-        price:44
+        price:44,
+        image:"https://i.ibb.co/j4pPXsV/Rectangle-28.png"
     }
 ]
 export default hotel;

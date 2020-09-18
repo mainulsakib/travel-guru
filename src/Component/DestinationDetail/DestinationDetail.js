@@ -19,13 +19,13 @@ const DestinationDetail = () => {
     
     return (
         <div style={{color: 'white'}}>
-           <div style={{width:"40%",float: 'right'}}>
-           <h1>This is Destination Detail:{destinationId}</h1>
+           <div style={{width:"40%",float: 'left',padding:'20px'}}>
+         
     <h3>{name}</h3>
     <p>{description}</p>
            </div>
-           <div style={{width:"30%"}}>
-           <Form>
+           <div style={{width:"50%",float: 'right'}}>
+           <Form style={{border:"1px solid black",backgroundColor:"white",margin:'20px',padding:'20px',color:"black",borderRadius:"4px"}}>
   <Form.Group controlId="formBasicOrigin">
     <Form.Label>Origin</Form.Label>
     <Form.Control type="text" placeholder="Enter origin" />
@@ -36,19 +36,17 @@ const DestinationDetail = () => {
         
     </Form.Control>
   </Form.Group>
-  <Form.Group controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <label for="from">From</label><br/>
+  
+  <label for="from">From: </label>
   <input type="date" name="From" id=""/>
-  <br/>
-  <label for="to">to</label><br/>
+
+  <label for="to">to:</label>
   
      <input type="date" name="to" id=""/>
       <br></br>
   <Button style={{backgroundColor: "#F9A51A",
-borderRadius: "5px",margin:" 10px 0", color: "white"}}S>
-   <Link to='/roominfo'>Booking  </Link>
+borderRadius: "5px",margin:" 10px 0", color: "white",width:'100%'}}S>
+   <Link style={{textDecoration: "none",color: "white"}} to='/roominfo'>Booking  </Link>
   </Button>
 </Form>
 
