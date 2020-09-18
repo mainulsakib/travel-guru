@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 
 const SlidingSection = (props) => {
-    const {name,image,description,id}=props.fakeData
+    const {name,image,id}=props.fakeData
 
     return (
-        <div>
+        <div style={{color: 'white'}}>
             <Card style={{ width: '18rem' ,float: 'left' ,margin: '60px', height: '100px',opacity:"10"}}>
         <Card.Img variant="top" src={image} />
         <Card.Body>

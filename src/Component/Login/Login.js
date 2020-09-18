@@ -1,11 +1,8 @@
 import React, { useContext, useState } from 'react';
 import * as firebase from "firebase/app";
 import "firebase/auth";
-import "firebase/firestore";
 import firebaseConfig from './firebase.cofig';
-import GoogleLogo from '../../Icon/google.png'
 import { Form } from 'react-bootstrap';
-import facebookLogo from '../../Icon/fb.png'
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
 
@@ -60,11 +57,9 @@ const Login = () => {
                     newUserInfo.isSignedIn=true
                     newUserInfo.name=res.name;
                     setUser(newUserInfo)
-
                     setLoggedInUser(newUserInfo)
                     updateUserInfo(user.name)
                     history.replace(from)
-                 
                 })
                 
                 .catch(function (error) {
@@ -84,14 +79,12 @@ const Login = () => {
                   setLoggedInUser(newUserInfo)
               history.replace(from)
               console.log('sign in successfully',res.user)
-
-                })
+       })
                 .catch(function (error) {
                     const newUserInfo = { ...user }
                     newUserInfo.error = error.message;
                     setUser(newUserInfo)
-
-                });
+         });
         }
         e.preventDefault()
     }
@@ -103,6 +96,7 @@ const Login = () => {
 
         }
         if (e.target.name === 'password' && e.target.name === 'confirmPassword') {
+           
             isFieldValid = e.target.value > 6 && /\d{1}/.test(e.target.value)
             console.log(isFieldValid)
 
@@ -132,8 +126,7 @@ const Login = () => {
                     isSignedIn: true,
                     name: name,
                     email: email,
-
-                }
+       }
                 setLoggedInUser(signedInUser)
                 setUser(signedInUser)
                 history.replace(from)
@@ -145,7 +138,7 @@ const Login = () => {
                 setUser(newUserInfo)
             });
     }
-    console.log(user)
+ 
 
     return (
         <div style={{ color: 'white' }}>
@@ -173,19 +166,18 @@ const Login = () => {
                     <Form.Control name="ConfirmPassword" onBlur={handleChange} type="password" required placeholder="Confirm Password" />
 
                 </Form.Group>}
-                <input type="submit" value="Submit"></input>
-                {newUser ? <div><p style={{ float: 'left' }}> already have an account?</p><p style={{ color: "blue", textDecoration: "underline" }} onClick={() => setNewUser(!newUser)}>Sign in</p> </div> :
-                    <div> <p style={{ float: 'left' }}>want to create an account?</p><p style={{ color: "blue", textDecoration: "underline" }} onClick={() => setNewUser(!newUser)}>sign up</p></div>}
+                <input style={{backgroundColor: "#F9A51A",borderRadius: "5px"}} type="submit" value="Submit"></input>
+
+                {
+                newUser ? <div><p style={{ float: 'left' }}> already have an account?</p><p style={{ color: "orange", cursor: "pointer",textDecoration: "underline" }} onClick={() => setNewUser(!newUser)}>Sign in</p> </div> :
+                    <div> <p style={{ float: 'left' }}>want to create an account?</p><p style={{ color: "orange",cursor:"pointer" ,textDecoration: "underline" }} onClick={() => setNewUser(!newUser)}>sign up</p></div>}
             </Form>
-            <p>{user.error}</p>
+           
 
-
+                <div style={{textAlign: 'center',margin:"0 auto"}}> 
+                    <p>{user.error}</p> 
             {
-                user.isSignedIn ? <p>welcome</p> :
-                    <div>
-                        <img style={{ width: '20px', height: '20px', float: 'left', margin: '5px' }} src={GoogleLogo} alt="" />
-                        <p style={{cursor:'pointer' }} onClick={handleGoogleSignIn}>Sign in with google</p>
-                    </div>
+                user.isSignedIn ? <p>welcome</p> : <p style={{cursor:'pointer' }} onClick={handleGoogleSignIn}>Sign in with google</p>
             }
             {
                 user.isSignedIn &&
@@ -193,12 +185,11 @@ const Login = () => {
                     <h1> {user.name}</h1>
                 </div>
             }
-            <img style={{ width: '20px', height: '20px', float: 'left', margin: '5px', cursor:'pointer' }} src={facebookLogo} alt="" />
-            <p onClick={handleFacebookSignIn}>Sign in with facebook</p>
+            
+            <p style={{cursor:'pointer'}} onClick={handleFacebookSignIn}>Sign in with facebook</p>
+                </div>
         </div>
     );
 };
 
 export default Login;
-
-
