@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+[visit website](https://affectionate-shannon-714f6f.netlify.app/)
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -67,9 +70,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-Links[visit website](https://affectionate-shannon-714f6f.netlify.app/)
+[visit website](https://affectionate-shannon-714f6f.netlify.app/)
  
-feater:
+feature:
 This is a website of travel website where we booking on destination and hotel  add different 
 tourist spot for this the tourist have to login first if he can login then he go to add check in date and checkout date then he can choose his room and and room page we can see the location map 
 
