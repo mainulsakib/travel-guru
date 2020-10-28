@@ -1,5 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Travel Guru 
 
 [visit website](https://affectionate-shannon-714f6f.netlify.app/)
 
